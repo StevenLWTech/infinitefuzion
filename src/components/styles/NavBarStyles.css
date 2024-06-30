@@ -1,0 +1,106 @@
+.Nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  background: linear-gradient(130deg, #FFA67A 30%, #FF5A76 70%);
+}
+
+.Nav .Logo img {
+  height: auto;      /* Maintain the aspect ratio */
+  width: 200px;      /* Set the desired width or use max-width as needed */
+  max-width: 100%;   /* Ensures the image is not larger than its container */
+}
+
+.Logo {
+  margin-left: 20px;
+}
+
+.Logo a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.Menu {
+  display: none; /* Start with the menu hidden on mobile */
+  flex-direction: column; /* Stack the links vertically on mobile */
+  position: absolute;
+  top: 60px; /* Adjust based on your Navbar height */
+  left: 20px; /* Align the menu to the left */
+  background-color: #f8f9fa;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 30%; /* Max width set to 30% of the viewport */
+  height: 100vh;
+}
+
+.Menu a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: block; /* Make each link a block for better touch targets */
+}
+
+.Menu.open {
+  display: flex; /* Show menu when 'open' */
+}
+
+.Hamburger {
+  display: block; /* Always display the hamburger on mobile */
+  cursor: pointer;
+}
+
+.HamburgerIcon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s;
+  background-color: #333;
+}
+
+.HamburgerIcon.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.HamburgerIcon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.HamburgerIcon.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Medium screens */
+@media (min-width: 768px) {
+  .Hamburger {
+    display: none; /* Hide hamburger icon on medium screens */
+  }
+
+  .Menu {
+    display: flex; /* Show menu as a row on medium screens */
+    position: static; /* Reset positioning on medium screens */
+    flex-direction: row; /* Horizontal layout of links */
+    background-color: transparent;
+    width: auto;
+    max-width: none; /* Remove max-width on medium screens */
+    height: auto; /* Reset height on medium screens */
+    margin: 0; /* Remove centering margin on medium screens */
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .Nav {
+    justify-content: space-between; /* Distribute space between logo and menu on large screens */
+    padding: 10px 40px; /* Adjust padding for large screens */
+  }
+
+  .Menu a {
+    padding: 10px 20px; /* Increase padding for menu items on large screens */
+  }
+}

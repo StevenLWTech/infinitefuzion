@@ -1,0 +1,71 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+/* src/App.css */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  font-family: Arial, sans-serif;
+  
+}
+
+.header {
+
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+
+.about, .classes, .testimonials, .contact {
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px 0; */
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 20px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+p {
+  margin: 20px 0;
+}
+
+.hero-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(248, 165, 165); */
+  
+}
+.hero-img img{
+  max-width: 70%;
+  height: auto;
+}
+.landing{
+
+  height: 70vh;
+ 
+  background: linear-gradient(105deg, #FFA67A 50%, #FF5A76 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
